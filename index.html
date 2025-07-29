@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8" />
+  <title>ராசி கட்டம் (108 பாதங்கள்) மற்றும் விம்சோத்தரி தசை</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>🌟 தென் இந்திய ராசி கட்டம் (108 பாதங்கள்) + <span style="color:#175397;">விம்சோத்தரி தசை</span> 🌟</h2>
+  <!-- MODE BUTTONS -->
+  <form onsubmit="event.preventDefault(); run();">
+    <div style="margin-bottom:6px;">
+      <label>பிறந்த தேதி: <input type="date" id="dob" required></label>
+      <span class="moonbox" style="margin-left:8px;">
+        சந்திரன் Degree : <input type="number" id="moon_deg" min="0" max="359" step="1" required style="width:38px;">°
+        <input type="number" id="moon_min" min="0" max="59"  step="1" required style="width:38px;">'
+        <input type="number" id="moon_sec" min="0" max="59"  step="1" required style="width:38px;">"
+      </span>
+    </div>
+    <div style="margin-bottom: 6px;">
+      <label>கணிப்புக்கான தேதி: <input type="datetime-local" id="caldate" style="width:210px;"></label>
+    </div>
+    <button type="submit" style="margin-left:0;">கணக்கிடு</button>
+    <div></div>
+  </form>
+  <br>
+  <div class="south-chart" id="rasiChart"></div>
+  <div class="mode-group">
+    <button id="btn-current" class="mode-btn">தற்போதைய தசா/புக்தி/அந்தரம்</button>
+    <button id="btn-range3" class="mode-btn">பாவம்</button>
+    <button id="btn-range" class="mode-btn">அபிஜித்/வைநாசிகம்/வதை</button>
+    <button id="btn-cyclic" class="mode-btn active-mode">ஏக நட்சத்திர/ராசி</button>
+    <button id="btn-range1" class="mode-btn">பாவமுனை</button>
+    <button id="btn-range2" class="mode-btn">எதிர் நட்சத்திரம்</button>
+  </div>
+
+  <div id="main-container">
+    <div id="left-column">
+     <div id="current"></div>  
+    </div>
+    <div id="right-column">
+      <div id="padasplit"></div>
+    </div>
+  </div>
+  <div id="dasatree"></div>
+  <script src="functions.js"></script>
+</body>
+</html>
