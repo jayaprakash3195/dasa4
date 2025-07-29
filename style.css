@@ -1,0 +1,101 @@
+    body { font-family: 'Latha', Arial, sans-serif; background: #fffef8; text-align: center; padding: 18px; margin: 0;}
+    .south-chart { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-areas:
+        "r10  r11  r12  r01"
+        "r09  xx   xx   r02"
+        "r08  xx   xx   r03"
+        "r07  r06  r05  r04";
+      gap: 5px; max-width: 990px; margin: 0 auto 22px;}
+
+    .box { background: #fffdf5; border: 2px solid #116504; border-radius: 10px; box-shadow: 0 2px 5px rgba(52, 202, 69, 0.1);
+      font-size: 12.5px; color: #135417; box-sizing: border-box; display: flex; flex-direction: column; align-items: left;
+      text-align: left; justify-content: left; padding: 6px 2px; height: 295px; transition: background 0.3s, border-color 0.3s;}
+    .box:hover { transform: scale(1.01); background: #fff5e6;}
+    .box.active-rasi-cyclic, .box.active-rasi-cyclic-range { background: linear-gradient(90deg, #7dba85 50%, #6bf28b 100%); border-color: #3aed43; box-shadow: 0 2px 10px #ffe58a66; }
+    .rasi-name { font-weight: bold; font-size: 15.5px; color: #f20909; margin-bottom: 4px; text-align: center;}
+    .line { cursor: pointer; width: 100%; border-radius: 4px; padding: 3px 2px; margin-bottom: 1.5px; line-height: 1.5; transition: background 0.3s, color 0.3s;}
+    .line:hover { background: #e9f0f9; }
+
+    /* Greens for current dasa pada */
+    .highlight-pada-dasa { background: #17671a !important; color: #fff !important; font-weight: bold; }
+    .highlight-pada-puthi { background: #40be4a !important; color: #fff !important; font-weight: bold; }
+    .highlight-pada-anthara { background: #b9f4ba !important; color: #21572a !important; font-weight: bold; }
+    
+    .tree-active { font-weight: bold; color: #136d19; text-decoration: underline dotted; background: #e9ffe6; border-radius: 4px; }
+    .tree-highlight-dasa { color: #17671a; font-weight:bold;}
+    .tree-highlight-puthi { color: #40be4a; font-weight:bold;}
+    .tree-highlight-anthara { color: #3b8733; font-weight:bold;}
+    .tree-period { color: #706a5a; font-size:93%; margin-left:4px; }
+    .tree-ul {
+      list-style: none;
+      padding-left: 24px;
+      text-align: left;
+      margin: 4px 0 8px 0;
+      font-size: 1em;
+    }
+    .tree-li {
+      margin-top:3.5px; margin-bottom:3.5px;
+    }
+    .tree-ul > .tree-li { margin-top:7px; margin-bottom:7px;}
+    .expand-btn {
+      font-size: 1.12em;
+      font-weight: bold;
+      color: #1b5d1f;
+      cursor: pointer;
+      background: #ecefff;
+      border: none;
+      border-radius: 4px;
+      padding: 0 7px;
+      margin-right: 3px;
+      margin-left:0;
+      outline:none;
+      vertical-align: middle;
+    }
+    .expand-btn.expanded { background: #bffff1; color: #338e82;}
+    .highlight-pada-interactive { background: #80e75e !important; color: #154d08 !important; font-weight: bold; border: 1.2px solid #08870e;}
+    .highlight-pada-1::before { content: "1 "; } 
+    .highlight-pada-2::before { content: "2"; }
+    .highlight-pada-3::before { content: "3 "; } 
+    .highlight-pada-4::before { content: "4 "; }
+    .highlight-pada-5::before { content: "5 "; } 
+    .highlight-pada-6::before { content: "6 "; }
+    .highlight-pada-7::before { content: "7 "; } 
+    .highlight-pada-8::before { content: "8 "; }
+    .highlight-pada-9::before { content: "9 "; } 
+    .highlight-pada-10::before { content: "10 "; }
+    .highlight-pada-11::before { content: "11 "; } 
+    .highlight-pada-12::before { content: "12 "; }
+    .clicked-pada-1::before { content: "1 "; }
+    .highlight-pada-orange::after { content: "🟠 "; } 
+    .highlight-pada-blue::after { content: "🔵 "; }
+    .clicked-pada-special::after { content: "🌟 "; } 
+    .mode-btn { background: #ede6ff; border: 1.5px solid #15b817; color: #063d0b; border-radius: 6px; font-size: 1.1em; font-weight: bold; margin: 0 8px 5px 0;
+                padding: 7px 17px; cursor: pointer; transition: background 0.15s; }
+    .mode-btn.active-mode { background: #36f029; color: #193f04; border-color: #046625; }
+    .mode-group { margin-bottom:14px;}
+    .currentbox { margin: 16px auto 24px auto; background: #e8ecf7; border-radius: 10px; box-shadow: 0 2px 6px #87aed9aa; padding: 16px 26px;
+      font-size: 1.1em; text-align: left; max-width: 670px; }
+    .dates { color: #100f0f; font-size: 90%; margin-left: 8px;}
+    .padasplit { margin: 20px auto 20px auto; background: #f4faff; border-radius: 7px; padding: 12px; max-width: 470px; box-shadow: 0 1px 3px #ccc; font-size: 1em; text-align: left;}
+    .padasplit u {font-weight: bold; color: #444;}
+    button[type=submit] { background: #2f76d2; color: white; border: none; padding: 6px 12px; border-radius: 5px; font-size: 14px; cursor: pointer; box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.1); transition: background 0.2s ease;}
+    button[type=submit]:hover {background: #195ea8;}
+    .r01 { grid-area: r11; } .r02 { grid-area: r12; } .r03 { grid-area: r01; } .r04 { grid-area: r02; } .r05 { grid-area: r03; } .r06 { grid-area: r04; }
+    .r07 { grid-area: r05; } .r08 { grid-area: r06; } .r09 { grid-area: r07; } .r10 { grid-area: r08; } .r11 { grid-area: r09; } .r12 { grid-area: r10; }
+    @media (max-width: 900px) {
+      .box { height: auto; }
+      .south-chart {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+          "r01 r02"
+          "r03 r04"
+          "r05 r06"
+          "r07 r08"
+          "r09 r10"
+          "r11 r12";
+      }
+      .currentbox,.padasplit { margin: 10px auto; font-size: 95%;}
+    }
+    #main-container { display: grid; grid-template-columns: 50% 50%; column-gap: 20px; max-width: 1200px;
+      margin: 0 auto 40px auto; align-items: start; }
+    #left-column, #right-column { background: #fefefe; border: 1.5px solid #ccc; border-radius: 10px; padding: 16px; box-shadow: 0 2px 6px #ccc9; max-height: 800px;}
+    #current { margin-bottom: 24px;}
